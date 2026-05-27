@@ -70,32 +70,20 @@ python3 usb_mp4_transfer_app.py
 ## 可选：打包成双击可运行的 App（macOS）
 如果你想把它变成 `.app`，可后续用 `pyinstaller` 打包。我可以继续帮你一键生成打包命令。
 
-## Windows 打包成 EXE（已提供一键脚本）
-本目录已包含脚本：`build_windows_exe.bat`
+## Windows 打包成 EXE（可选）
+当前目录没有包含 Windows 打包脚本。如需分发给 Windows 电脑，可后续补充 `pyinstaller` 打包脚本。
 
 在 Windows 上操作：
 1. 安装 Python 3.9+（安装时勾选 `Add python.exe to PATH`）。
 2. 把整个 `U盘上传app` 文件夹拷到 Windows 电脑。
-3. 双击运行 `build_windows_exe.bat`（或在 `cmd` 中执行它）。
-4. 打包完成后，程序在：
+3. 使用 `pyinstaller` 打包主程序。
+4. 打包完成后，程序通常在：
    `dist\usb_folder_import\usb_folder_import.exe`
 
 说明：
-- 打包命令会自动安装/升级 `pyinstaller`。
 - 建议在目标 Windows 电脑上打包并运行（Windows 版本/架构更兼容）。
-
-## Windows 一键发布包（推荐分发给其他电脑）
-本目录已包含脚本：`build_windows_release.bat`
-
-在 Windows 上双击运行后，会自动完成：
-1. 打包 EXE
-2. 生成发布目录：`release\usb_folder_import_windows`
-3. 生成 zip：`release\usb_folder_import_windows.zip`
-
-把发布目录或 zip 发到其他 Windows 机器后，直接运行 `usb_folder_import.exe` 即可，不需要在目标机器安装 Python。
 
 ## EXE 打不开时怎么排查
 1. 先确认是用 Windows 电脑打包出来的 EXE（不要用 macOS 产物直接在 Windows 运行）。
-2. 运行 `build_windows_exe_debug.bat` 生成带控制台的调试版 EXE。
-3. 双击 `dist\usb_folder_import_debug\usb_folder_import_debug.exe`，查看控制台报错。
-4. 若仍无明显信息，查看用户目录日志文件：`%USERPROFILE%\usb_folder_import_error.log`。
+2. 优先生成带控制台的调试版 EXE，查看控制台报错。
+3. 若仍无明显信息，查看用户目录日志文件：`%USERPROFILE%\usb_folder_import_error.log`。

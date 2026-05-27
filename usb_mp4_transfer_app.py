@@ -18,6 +18,7 @@ DEFAULT_SCAN_INTERVAL_SECONDS = 5
 MAX_PARALLEL_UPLOADS = 35
 EXCLUDED_TOP_LEVEL_FOLDER_NAMES = {"system volume information"}
 HISTORY_FILENAME = ".usb_folder_import_history.json"
+LEGACY_FOLDER_PREFIXES = ()
 
 
 class UsbMp4TransferApp:
